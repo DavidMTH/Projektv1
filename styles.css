@@ -1,11 +1,13 @@
 body {
-    background-color: lightblue;
+    background-color: #eb6e07;
     font-family: Arial, sans-serif;
-    text-align: center;
-    
-    }
-    
-    button {
-        padding: 10px;
-        font-size: 16px;
-    }
+    color: #080000;
+  }
+  
+  h1 {
+    color: #000000;
+  }
+  
+  p {
+    font-size: 16px;
+  }
