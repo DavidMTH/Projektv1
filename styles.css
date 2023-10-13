@@ -1,5 +1,9 @@
 body {
+<<<<<<< Updated upstream
     background-color: #eb6e07;
+=======
+    background-color: #8ef1bb;
+>>>>>>> Stashed changes
     font-family: Arial, sans-serif;
     color: #080000;
   }
@@ -10,4 +14,8 @@ body {
   
   p {
     font-size: 16px;
+<<<<<<< Updated upstream
   }
+=======
+  }
+>>>>>>> Stashed changes
