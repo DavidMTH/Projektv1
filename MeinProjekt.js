@@ -2,15 +2,30 @@ document.addEventListener("DOMContentLoaded", function() {
     const elements = document.querySelectorAll("h1, p, a");
   
     elements.forEach(function(element) {
-      // Beispiel: Ändere die Schriftfarbe auf Rot
-      element.style.color = "red";
-      // Beispiel: Ändere die Schriftgröße auf 20 Pixel
-      element.style.fontSize = "20px";
-      // Beispiel: Füge einen Hintergrundfarbe hinzu
-      element.style.backgroundColor = "lightblue";
-      // Beispiel: Setze den Text in Fettschrift
-      element.style.fontWeight = "bold";
-      // Beispiel: Ändere den Abstand zwischen den Elementen
-      element.style.marginBottom = "10px";
+        //Aendern der Schriftfarbe eines Elements
+        const element = document.getElementById("myElement");
+        element.style.color = "red";
+        
+        //Aendern der Schriftgroesse eines Elements
+        const element = document.getElementById("myElement");
+        element.style.fontSize = "20px";
+        
+        //Aendern der Hintergrundfarbe eines Elements
+        const element = document.getElementById("myElement");
+        element.style.backgroundColor = "blue";
+        
+        //Aendern der Randbreite eines Elements
+        const element = document.getElementById("myElement");
+        element.style.borderWidth = "2px";
+        
+        //Aendern der Randfarbe eines Elements
+        const element = document.getElementById("myElement");
+        element.style.borderColor = "green";
+        
+        //Aendern des Abstands oben und unten eines Elements
+        const element = document.getElementById("myElement");
+        element.style.margin = "10px 0";
+                
+
+        });
     });
-  });
