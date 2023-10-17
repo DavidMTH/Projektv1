@@ -5,7 +5,7 @@
   <style>
       body {
     background-color: coral;
-    }
+  }
     .quiz-container {
       text-align: center;
     }
@@ -36,6 +36,9 @@
     .next-button {
       margin-top: 20px;
     }
+    .restart-button {
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
@@ -49,6 +52,7 @@
     </div>
     <div class="score">Punkte: <span id="score">0</span></div>
     <button id="next" class="next-button" style="display: none;">Weiter</button>
+    <button id="restart" class="restart-button" style="display: none;">Neustart</button>
   </div>
 
   <script>
@@ -80,6 +84,7 @@
     var score = 0;
     var scoreElement = document.getElementById('score');
     var nextButton = document.getElementById('next');
+    var restartButton = document.getElementById('restart');
     var questionElement = document.getElementById('question');
 
     function showQuestion() {
@@ -121,7 +126,19 @@
         options.forEach(function(option) {
           option.style.display = 'none';
         });
+        restartButton.style.display = 'block';
       }
+    }
+
+    function restartQuiz() {
+      currentQuestionIndex = 0;
+      score = 0;
+      scoreElement.textContent = score;
+      restartButton.style.display = 'none';
+      options.forEach(function(option) {
+        option.style.display = 'block';
+      });
+      showQuestion();
     }
 
     options.forEach(function(option) {
@@ -132,6 +149,10 @@
 
     nextButton.addEventListener('click', function() {
       nextQuestion();
+    });
+
+    restartButton.addEventListener('click', function() {
+      restartQuiz();
     });
   </script>
 </body>
