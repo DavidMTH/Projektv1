@@ -9,3 +9,6 @@ Erkennen was für ne Lusche ich noch bin -  html und JS mit Lernvideos und ChatG
 
 ##############16.10.23##############
 Ich habe nach Absprache mit Patrick (danke nochmal) ein neues Grundgeruest genommen, weil wir eben manche noch von den Hausaufgaben hatten.
+
+##############17.10.23##############
+meinProjekt.html ist jetzt insofern individualisiert, dass die Anrodnung von Frage und Antwortmöglichkeiten stimmt, die Richtige Antwort grün und die drei anderen, falschen Antworten rot highlighted sind. Außerdem habe ich ein paar Fragen und einen Punktezähler hinzugefügt. meinProjekt.js habe ich gelöscht, die Dokumentation wurde auch aktualisiert.
