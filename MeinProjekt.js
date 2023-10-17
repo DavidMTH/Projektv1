@@ -1,20 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const body = document.body;
-    const quizContainer = document.querySelector(".quiz-container");
     const questionElement = document.getElementById('question');
     const options = document.querySelectorAll(".option");
-    const scoresElement = document.querySelector(".score");
-    const nextButton = document.querySelector(".next-button");
-    const restartButton = document.querySelector(".restart-button");
-
-    nextButton.addEventListener("click", showNextQuestion);
-    restartButton.addEventListener("click", restartQuiz);
-
-    options.forEach(function(option) {
-        option.addEventListener('click', function() {
-            checkAnswer(option);
-        });
-    });
+    const scoresElement = document.getElementById('score');
+    const nextButton = document.getElementById('next');
+    const restartButton = document.getElementById('restart');
 
     const questions = [
         {
@@ -62,9 +51,9 @@ document.addEventListener('DOMContentLoaded', function() {
             options.forEach(function(option) {
                 option.classList.remove('correct', 'incorrect');
             });
-            nextButton.style.display = 'none';
             currentQuestionIndex++;
             showQuestion();
+            nextButton.style.display = 'none';
         } else {
             congratulate();
         }
@@ -103,8 +92,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 option.classList.add('incorrect');
             }
         });
-        nextButton.style.display = 'block';
-        showNextQuestion();
     }
 
     function congratulate() {
@@ -114,6 +101,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         restartButton.style.display = 'block';
     }
-
+    
     showQuestion();
 });
