@@ -15,20 +15,6 @@ options.forEach(function(option) {
     });
 });
 
-function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-};
-
-function shuffleQuestionsAndOptions() {
-    shuffle(questions);
-    questions.forEach(question => shuffle(question.options));
-}
-
-shuffleQuestionsAndOptions();
-
 function showNextQuestion() {
     if (currentQuestionIndex < questions.length) {
         options.forEach(function(option) {
@@ -45,7 +31,7 @@ function showNextQuestion() {
 function restartQuiz() {
     currentQuestionIndex = 0;
     score = 0;
-    scoresElement.textContent = score; // Hier die Korrektur: scoresElement statt scoredElement
+    scoresElement.textContent = score;
     restartButton.style.display = 'none';
     options.forEach(function(option) {
         option.style.display = 'block';
@@ -69,7 +55,7 @@ function checkAnswer(selectedOption) {
     } else {
         selectedOption.classList.add('incorrect');
     }
-    scoresElement.textContent = score;  // Hier die Korrektur: scoresElement statt scoredElement
+    scoresElement.textContent = score;
     options.forEach(function(option) {
         if (option.textContent !== currentQuestion.correctAnswer) {
             option.classList.add('incorrect');
