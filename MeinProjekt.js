@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const scoresElement = document.getElementById('score');
     const nextButton = document.getElementById('next');
     const restartButton = document.getElementById('restart');
+    const quizContainer = document.querySelector(".quiz-container");
 
     const questions = [
         {
@@ -23,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         {
             question: "Wer hat das Gemälde 'Die Mona Lisa' gemalt?",
-            options: ["Vincent van Gogh","Leanoardo da Vinci","Pablo Picasso","Michelangelo"],
+            options: ["Vincent van Gogh","Leonardo da Vinci","Pablo Picasso","Michelangelo"],
             correctAnswer: "Leonardo da Vinci"
         },
         {
@@ -46,18 +47,31 @@ document.addEventListener('DOMContentLoaded', function() {
     var currentQuestionIndex = 0;
     var score = 0;
 
-    function showNextQuestion() {
-        if (currentQuestionIndex < questions.length - 1) {
-            options.forEach(function(option) {
-                option.classList.remove('correct', 'incorrect');
-            });
-            currentQuestionIndex++;
-            showQuestion();
-            nextButton.style.display = 'none';
+    function nextQuestion() {
+        options.forEach(function(option) {
+          option.classList.remove('correct', 'incorrect');
+        });
+        nextButton.style.display = 'none';
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+          showQuestion();
         } else {
-            congratulate();
+          // Zeige Quiz-Ergebnis
+          questionElement.textContent = "Quiz beendet! Dein Ergebnis: " + score + " Punkte";
+          options.forEach(function(option) {
+            option.style.display = 'none';
+          });
         }
-    }
+      }
+      options.forEach(function(option) {
+        option.addEventListener('click', function() {
+          checkAnswer(option);
+        });
+      });
+  
+      nextButton.addEventListener('click', function() {
+        nextQuestion();
+      });  
 
     function restartQuiz() {
         currentQuestionIndex = 0;
@@ -72,34 +86,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function showQuestion() {
         var currentQuestion = questions[currentQuestionIndex];
-        questionElement.textContent = currentQuestion.question;
+        questionElement.textContent = "Frage: " + currentQuestion.question;
         options.forEach(function(option, index) {
-            option.textContent = currentQuestion.options[index];
+          option.textContent = currentQuestion.options[index];
         });
-    }
-
-    function checkAnswer(selectedOption) {
+      }
+      function checkAnswer(selectedOption) {
         var currentQuestion = questions[currentQuestionIndex];
         if (selectedOption.textContent === currentQuestion.correctAnswer) {
-            selectedOption.classList.add('correct');
-            score += 10;
+          selectedOption.classList.add('correct');
+          score += 10;
         } else {
-            selectedOption.classList.add('incorrect');
+          selectedOption.classList.add('incorrect');
         }
         scoresElement.textContent = score;
         options.forEach(function(option) {
-            if (option.textContent !== currentQuestion.correctAnswer) {
-                option.classList.add('incorrect');
-            }
+          if (option.textContent !== currentQuestion.correctAnswer) {
+            option.classList.add('incorrect');
+          }
         });
-    }
-
+        nextButton.style.display = 'block';
+      }
     function congratulate() {
         const totalScoreElement = document.createElement('div');
         totalScoreElement.textContent = `Herzlichen Glückwunsch! Du hast ${score} Punkte erreicht.`;
         quizContainer.appendChild(totalScoreElement);
 
         restartButton.style.display = 'block';
+    }
+
+    function quizCompleted() {
+        congratulate();
     }
     
     showQuestion();
