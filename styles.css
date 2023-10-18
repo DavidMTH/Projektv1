@@ -1,52 +1,41 @@
 body {
   background-color: coral;
-}
-.quiz-container {
-  width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #000000;
-  border-radius: 5px;
-}
+  }
+  .quiz-container {
+    text-align: center;
+  }
+  .question {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .option {
+    padding: 10px;
+    cursor: pointer;
+  }
+  .next-button,
+  .restart-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ccc;
+    cursor: pointer;
+  }
 
-.question {
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 1px solid #000000;
-  border-radius: 5px;
-}
+  .next-button:hover,
+  .restart-button:hover {
+    background-color: #aaa;
+  }
 
-.option {
-  margin-bottom: 5px;
-  padding: 5px;
-  border: 1px solid #000000;
-  border-radius: 5px;
-  cursor: pointer;
-}
+  .correct {
+    background-color: green;
+  }
 
-.score {
-  margin-bottom: 10px;
-}
-
-.next-button,
-.restart-button {
-  margin-top: 10px;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #ccc;
-  cursor: pointer;
-}
-
-.next-button:hover,
-.restart-button:hover {
-  background-color: #aaa;
-}
-
-.correct {
-  background-color: green;
-}
-
-.incorrect {
-  background-color: red;
-}
+  .incorrect {
+    background-color: red;
+  }
