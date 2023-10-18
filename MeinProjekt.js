@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
     alert("Spiel beendet!");
 
   restartButton.addEventListener('click', function() {
-    restartQuiz(); // Aufruf der restartQuiz-Funktion beim Klicken des Neustart-Buttons
+    restartQuiz();
   });
 
   showQuestion();
