@@ -6,22 +6,20 @@
   <title>Mein Quiz - Hast du es drauf?</title>
 </head>
 <body>
-    <body style="color: rgb(0, 0, 2);">
-        <body bgcolor="coral"></body>
-
-    <script src="MeinProjekt.js"></script>
-  <div class="quiz-container">
-    <div class="question" id="question">Frage: Was ist die Hauptstadt von Deutschland?</div>
-    <div class="options">
-      <div class="option">Berlin</div>
-      <div class="option">Paris</div>
-      <div class="option">London</div>
-      <div class="option">Rom</div>
+  <div id="quiz-wrapper">
+    <div class="quiz-container">
+      <div class="question" id="question">Frage: Was ist die Hauptstadt von Deutschland?</div>
+      <div class="options">
+        <div class="option">Berlin</div>
+        <div class="option">Paris</div>
+        <div class="option">London</div>
+        <div class="option">Rom</div>
+      </div>
+      <div class="score">Punkte: <span id="score">0</span></div>
+      <button id="next" class="next-button" style="display: none;">Weiter</button>
+      <button id="restart" class="restart-button" style="display: none;">Neustart</button>
     </div>
-    <div class="score">Punkte: <span id="score">0</span></div>
-    <button id="next" class="next-button" style="display: none;">Weiter</button>
-    <button id="restart" class="restart-button" style="display: none;">Neustart</button> <!-- Neustart-Button hinzugefügt -->
+    <button id="exit" class="exit-button" onclick="exitGame()">Beenden</button>
   </div>
-
 </body>
 </html>
