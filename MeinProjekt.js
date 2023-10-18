@@ -56,10 +56,12 @@ document.addEventListener('DOMContentLoaded', function() {
         question:"Wer schrieb das Drama 'Romeo und Julia'?",
         options:["William Shakespeare","Johann Wolfgang von Goethe","Charles Dickens","Friedrich Schiller","Kalahari-Wüste"],
         correctAnswer:"William Shakespeare"
+      }
+    ]
+  });
+      
 
-      },
 
-  ];
 
   let currentQuestionIndex = 0;
   let score = 0;
@@ -138,10 +140,12 @@ document.addEventListener('DOMContentLoaded', function() {
   function quizCompleted() {
       congratulate();
   }
+  function exitGame() {
+    alert("Spiel beendet!");
 
   restartButton.addEventListener('click', function() {
     restartQuiz(); // Aufruf der restartQuiz-Funktion beim Klicken des Neustart-Buttons
   });
 
   showQuestion();
-});
+};
