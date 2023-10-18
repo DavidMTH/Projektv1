@@ -1,43 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mein Quiz - Hast du es drauf?</title>
-  <title>Quiz</title>
-  <style>
-      body {
-    background-color: coral;
-    }
-    .quiz-container {
-      text-align: center;
-    }
-    .question {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-    .options {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-    }
-    .option {
-      padding: 10px;
-      cursor: pointer;
-    }
-    .correct {
-      background-color: green;
-    }
-    .incorrect {
-      background-color: red;
-    }
-    .score {
-      font-size: 18px;
-      font-weight: bold;
-      margin-top: 20px;
-    }
-    .next-button {
-      margin-top: 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <title>Mein Quiz - Hast du es drauf?</title>
 </head>
 <body>
     <body style="color: rgb(0, 0, 2);">
@@ -54,90 +19,10 @@
     </div>
     <div class="score">Punkte: <span id="score">0</span></div>
     <button id="next" class="next-button" style="display: none;">Weiter</button>
+    <button id="restart" class="restart-button" style="display: none;">Neustart</button> <!-- Neustart-Button hinzugefügt -->
   </div>
 
-  <script>
-    var questions = [
-      {
-        question: "Was ist die Hauptstadt von Deutschland?",
-        options: ["Berlin", "Paris", "London", "Rom"],
-        correctAnswer: "Berlin"
-      },
-      {
-        question: "Was ist die Hauptstadt von Frankreich?",
-        options: ["London", "Rom", "Paris", "Berlin"],
-        correctAnswer: "Paris"
-      },
-      {
-        question: "Was ist die Hauptstadt von England?",
-        options: ["Rom", "Paris", "London", "Berlin"],
-        correctAnswer: "London"
-      },
-      {
-        question: "Was ist die Hauptstadt von Spanien?",
-        options: ["Barcelona", "Madrid", "Lissabon","Malaga"],
-        correctAnswer: "Madrid"
-      },
-    ];
 
-    var currentQuestionIndex = 0;
-    var options = document.querySelectorAll('.option');
-    var score = 0;
-    var scoreElement = document.getElementById('score');
-    var nextButton = document.getElementById('next');
-    var questionElement = document.getElementById('question');
-
-    function showQuestion() {
-      var currentQuestion = questions[currentQuestionIndex];
-      questionElement.textContent = "Frage: " + currentQuestion.question;
-      options.forEach(function(option, index) {
-        option.textContent = currentQuestion.options[index];
-      });
-    }
-
-    function checkAnswer(selectedOption) {
-      var currentQuestion = questions[currentQuestionIndex];
-      if (selectedOption.textContent === currentQuestion.correctAnswer) {
-        selectedOption.classList.add('correct');
-        score += 10;
-      } else {
-        selectedOption.classList.add('incorrect');
-      }
-      scoreElement.textContent = score;
-      options.forEach(function(option) {
-        if (option.textContent !== currentQuestion.correctAnswer) {
-          option.classList.add('incorrect');
-        }
-      });
-      nextButton.style.display = 'block';
-    }
-
-    function nextQuestion() {
-      options.forEach(function(option) {
-        option.classList.remove('correct', 'incorrect');
-      });
-      nextButton.style.display = 'none';
-      currentQuestionIndex++;
-      if (currentQuestionIndex < questions.length) {
-        showQuestion();
-      } else {
-        // Zeige Quiz-Ergebnis
-        questionElement.textContent = "Quiz beendet! Dein Ergebnis: " + score + " Punkte";
-        options.forEach(function(option) {
-          option.style.display = 'none';
-        });
-      }
-    }
-
-    options.forEach(function(option) {
-      option.addEventListener('click', function() {
-        checkAnswer(option);
-      });
-    });
-
-    nextButton.addEventListener('click', function() {
-      nextQuestion();
-    });
-  </script>
+  <script src="MeinProjekt.html"></script>
 </body>
 </html>
