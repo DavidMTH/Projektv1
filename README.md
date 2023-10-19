@@ -16,4 +16,5 @@ Ausserdem habe ich endlich die drei datentypen fürs Erstellen der Webseite HTML
 
 ##############18.10.23##############
 ich fixe immer wieder kleine fehler, die nebenbei beim coden auftauchen. Die ganzen Zusatzfunktionen, Neustart nach dem Ziel, Beenden Button jederzeit, Fragen auf Zeit, Rot/Grün Highlight bei richtig oder falschen Antworten. Dazu immer mal wieder Button oder Klick Probleme - nichts lässt sich anklicken, Button reagieren nicht mehr auf einmal, highlights sind falsch gesetzt odefr gehen garnicht. Aber das alles lässt sich schnell und einfach fixen.
-Gute Nacht <3.
+
+##############19.10.23##############
