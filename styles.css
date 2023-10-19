@@ -18,7 +18,7 @@ body {
 .options {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 15px;
   color: #3f151b;
 }
 
