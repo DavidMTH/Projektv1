@@ -56,7 +56,32 @@ document.addEventListener('DOMContentLoaded', function() {
       question:"Wer schrieb das Drama 'Romeo und Julia'?",
       options:["William Shakespeare","Johann Wolfgang von Goethe","Charles Dickens","Friedrich Schiller","Kalahari-Wüste"],
       correctAnswer:"William Shakespeare"
-    }
+    },
+    { 
+      question: "Welcher Planet ist der dritte in unserem Sonnensystem?",
+      options: ["Venus","Jupiter","Mars","Uranus"],
+      correctAnswer: "Mars"
+  },
+  { 
+    question: "Was ist die chemische Formel für Wasser?",
+    options: ["CO2","H2O","CH4","O2"],
+    correctAnswer: "H2O"
+},
+{ 
+  question: "Welches Land hat die meisten Einwohner auf der Welt?",
+  options: ["Indien","China","Russland","USA"],
+  correctAnswer: "China"
+},
+{ 
+  question: "Wer malte das berühmte Gemälde 'Die Sternennacht'?",
+  options: ["Vincent van Gogh","Pablo Picasso","Leonardo da Vinci","Edvard Munch"],
+  correctAnswer: "Vincent van Gogh"
+},
+{ 
+  question: "Welches Land liegt südlich von Ägypten?",
+  options: ["Saudi-Arabien","Italien","Kenia","Griechenland"],
+  correctAnswer: "Kenia"
+}
   ];
 
   let currentQuestionIndex = 0;
@@ -170,14 +195,31 @@ document.addEventListener('DOMContentLoaded', function() {
   function quizCompleted() {
     congratulate();
   }
+  
   function exitGame() {
-    alert("Spiel beendet!");
+    clearInterval(timer);
+    const totalScoreElement = document.createElement('div');
+    totalScoreElement.textContent = `Spiel beendet! Du hast: ${score} Punkte / 100 Punkte erreicht.`;
+    quizContainer.appendChild(totalScoreElement);
+
+    options.forEach(function(option) {
+      option.style.display = 'none';
+    });
+
+    nextButton.style.display = 'none';
+    restartButton.style.display = 'block';
   }
+
+  const exitButton = document.getElementById('exit');
+  exitButton.addEventListener('click', function() {
+    exitGame();
+  });
+});
 
   restartButton.addEventListener('click', function() {
     restartQuiz();
   });
 
   showQuestion();
-});
+
 
