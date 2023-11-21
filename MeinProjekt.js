@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (currentQuestionIndex < questions.length) {
       showQuestion();
     } else {
-      questionElement.textContent = "Herzlichen Glückwunsch! Du hast: " + score + " Punkte / 100 Punkte erreicht.";
+      questionElement.textContent = "Herzlichen Glückwunsch! Du hast: " + score + " Punkte / 150 Punkte erreicht.";
       options.forEach(function(option) {
         option.style.display = 'none';
       });
