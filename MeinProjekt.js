@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function congratulate() {
     const totalScoreElement = document.createElement('div');
-    totalScoreElement.textContent = `Herzlichen Glückwunsch! Du hast: ${score} Punkte / 100 Punkte erreicht.`;
+    totalScoreElement.textContent = `Herzlichen Glückwunsch! Du hast: ${score} Punkte / 150 Punkte erreicht.`;
     quizContainer.appendChild(totalScoreElement);
 
     restartButton.style.display = 'block';
